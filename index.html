@@ -65,44 +65,27 @@
       width: 100%;
       text-align: center;
       text-decoration: none;
-      transition: background-color 0.2s ease, transform 0.3s ease;
     }
 
     .btn:hover {
-      background-color: #555;
-      transform: scale(1.05);
+      background-color: #fff;
     }
-
     .success-message {
       text-align: center;
       color: #006400;
       margin-top: 20px;
-      animation: slideIn 1s ease forwards;
-      display: none;
-    }
-
-    @keyframes slideIn {
-      from {
-        transform: translateY(-10px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
+    } 
     .footer {
-      color: black;
-      text-align: center;
-      padding: 20px;
-      position: fixed;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: 0;
-      width: 100%;
-      background-color: transparent;
-    }
+  color: black; /* Set text color to black */
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 100%;
+  background-color: transparent; /* Remove background color */
+}
   </style>
 </head>
 <body>
@@ -133,17 +116,16 @@
     <div class="success-message" id="successMessage" style="display: none;">Sukses terkirim</div>
   </div> 
   <div class="footer"> 
-    <p>web santet online • 2024</p>
+  <p>web santet online • 2024</p>
   </div>
   <script>
     const santetForm = document.getElementById('santetForm');
-const successMessage = document.getElementById('successMessage');
+    const successMessage = document.getElementById('successMessage');
 
-santetForm.addEventListener('submit', function(event) {
-  event.preventDefault(); 
-  successMessage.style.display = 'block';
-  setTimeout(() => { successMessage.style.display = 'none'; }, 2000); // 2000 milliseconds (2 seconds)
-});
+    santetForm.addEventListener('submit', function(event) {
+      event.preventDefault(); 
+      successMessage.style.display = 'block';
+    });
   </script>
 </body>
 </html>
