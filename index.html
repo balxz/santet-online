@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Santet Online</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 350px;
+      padding: 20px;
+      border: 2px solid #000;
+      border-radius: 20px;
+      background-color: #fffff;
+      box-shadow: 0 0 40px rgba(128, 128, 128, 0.5);
+    }
+
+    .header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input[type="text"],
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      box-sizing: border-box;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+    }
+
+    .btn {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      display: block;
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #555;
+      transform: scale(1.05);
+    }
+
+    .success-message {
+      text-align: center;
+      color: #006400;
+      margin-top: 20px;
+      animation: slideIn 1s ease forwards;
+      display: none;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-10px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .footer {
+      color: black;
+      text-align: center;
+      padding: 20px;
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+      width: 100%;
+      background-color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Santet Online V1</h1>
+    </div>
+    <form id="santetForm">
+      <div class="form-group">
+        <label for="nama">Nama Target:</label>
+        <input type="text" id="nama" name="nama">
+      </div>
+      <div class="form-group">
+        <label for="tanggal">Tanggal Lahir Target:</label>
+        <input type="date" id="tanggal" name="tanggal">
+      </div>
+      <div class="form-group">
+        <label for="category">Pilih Type Santet Dibawah:</label>
+        <select id="category" name="category"> 
+          <option value="Pilihan 0">——pilih disini——</option>
+          <option value="Pilihan 1">tertelan paku</option>
+          <option value="Pilihan 2">muntah baut</option>
+          <option value="Pilihan 3">otomatis bunuh diri</option>
+        </select>
+      </div>
+      <button type="submit" class="btn">Kirim Santet</button>
+    </form>
+    <div class="success-message" id="successMessage" style="display: none;">Sukses terkirim</div>
+  </div> 
+  <div class="footer"> 
+    <p>web santet online • 2024</p>
+  </div>
+  <script>
+    const santetForm = document.getElementById('santetForm');
+const successMessage = document.getElementById('successMessage');
+
+santetForm.addEventListener('submit', function(event) {
+  event.preventDefault(); 
+  successMessage.style.display = 'block';
+  setTimeout(() => { successMessage.style.display = 'none'; }, 2000); // 2000 milliseconds (2 seconds)
+});
+  </script>
+</body>
+</html>
